@@ -169,6 +169,33 @@ header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;ba
   .sw-grid{grid-template-columns:repeat(auto-fill,minmax(85px,1fr))}
   .gr-grid{grid-template-columns:repeat(auto-fill,minmax(175px,1fr))}
 }
+
+.page{padding:2rem 1rem}
+.hero{margin-bottom:2.5rem}
+.hero h1{font-size:22px;font-weight:500;color:var(--color-text-primary);font-family:var(--font-sans);margin-bottom:6px}
+.hero p{font-size:14px;color:var(--color-text-secondary);font-family:var(--font-sans)}
+.section-label{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-tertiary);font-family:var(--font-sans);margin:2rem 0 .75rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin-bottom:12px}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;position:relative;overflow:hidden}
+.card:hover{border-color:var(--color-border-secondary)}
+.card-accent{position:absolute;top:0;left:0;width:3px;height:100%;border-radius:4px 0 0 4px}
+.badge{display:inline-flex;align-items:center;font-size:11px;font-weight:500;padding:2px 8px;border-radius:4px;font-family:var(--font-sans);margin-bottom:10px}
+.badge-blue{background:#E6F1FB;color:#0C447C}
+.badge-teal{background:#E1F5EE;color:#085041}
+.badge-amber{background:#FAEEDA;color:#633806}
+.badge-purple{background:#EEEDFE;color:#3C3489}
+.badge-coral{background:#FAECE7;color:#712B13}
+.badge-gray{background:#F1EFE8;color:#444441}
+.badge-pink{background:#FBEAF0;color:#72243E}
+.card-title{font-size:13px;font-weight:500;color:var(--color-text-secondary);font-family:var(--font-sans);margin-bottom:10px}
+.code-block{background:var(--color-background-secondary);border-radius:6px;padding:10px 12px;font-size:12px;line-height:1.7;color:var(--color-text-primary);border:0.5px solid var(--color-border-tertiary);overflow-x:auto}
+.comment{color:var(--color-text-tertiary)}
+.at{color:#185FA5}
+.val{color:#3B6D11}
+.prop{color:#854F0B}
+.meta{font-size:12px;color:var(--color-text-tertiary);font-family:var(--font-sans);margin-top:8px}
+.divider{height:0.5px;background:var(--color-border-tertiary);margin:2rem 0}
+.full{grid-column:1/-1}
 </style>
 </head>
 <body>
@@ -235,6 +262,195 @@ header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;ba
     <div class="sec-count"><div class="count-n" style="color:var(--gold)" id="kc-n">—</div><div class="count-l">styles</div></div>
   </div>
   <div id="csg"></div>
+</div>
+
+<div class="page">
+  <h2 class="sr-only">CSS Media Queries reference documentation cards</h2>
+  <div class="hero">
+    <h1>CSS Media Queries</h1>
+    <p>A complete reference — responsive breakpoints, device types, orientation, and pixel density.</p>
+  </div>
+
+  <div class="section-label">Responsive grid breakpoints</div>
+  <div class="grid">
+    <div class="card"><div style="position:absolute;top:0;left:0;width:3px;height:100%;background:#378ADD;border-radius:4px 0 0 4px"></div>
+      <div class="badge badge-blue">Desktop (default)</div>
+      <div class="card-title">1280px and above</div>
+      <div class="code-block"><span class="comment">/* Base styles — no query needed */</span>
+<span class="at">@media</span> all and <span class="prop">(min-width: 1280px)</span> { }</div>
+    </div>
+    <div class="card"><div style="position:absolute;top:0;left:0;width:3px;height:100%;background:#1D9E75;border-radius:4px 0 0 4px"></div>
+      <div class="badge badge-teal">Large tablet</div>
+      <div class="card-title">1024px – 1280px</div>
+      <div class="code-block"><span class="at">@media</span> all and
+  <span class="prop">(min-width: 1024px)</span> and
+  <span class="prop">(max-width: 1280px)</span> { }</div>
+    </div>
+    <div class="card"><div style="position:absolute;top:0;left:0;width:3px;height:100%;background:#EF9F27;border-radius:4px 0 0 4px"></div>
+      <div class="badge badge-amber">Tablet landscape</div>
+      <div class="card-title">768px – 1024px</div>
+      <div class="code-block"><span class="at">@media</span> all and
+  <span class="prop">(min-width: 768px)</span> and
+  <span class="prop">(max-width: 1024px)</span> { }</div>
+    </div>
+    <div class="card"><div style="position:absolute;top:0;left:0;width:3px;height:100%;background:#7F77DD;border-radius:4px 0 0 4px"></div>
+      <div class="badge badge-purple">Tablet portrait</div>
+      <div class="card-title">480px – 768px</div>
+      <div class="code-block"><span class="at">@media</span> all and
+  <span class="prop">(min-width: 480px)</span> and
+  <span class="prop">(max-width: 768px)</span> { }</div>
+    </div>
+    <div class="card"><div style="position:absolute;top:0;left:0;width:3px;height:100%;background:#D85A30;border-radius:4px 0 0 4px"></div>
+      <div class="badge badge-coral">Phone</div>
+      <div class="card-title">480px and below</div>
+      <div class="code-block"><span class="at">@media</span> all and
+  <span class="prop">(max-width: 480px)</span> { }</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="section-label">Foundation breakpoints (mobile-first)</div>
+  <div class="grid">
+    <div class="card">
+      <div class="badge badge-coral">Mobile</div>
+      <div class="card-title">All screens — base styles</div>
+      <div class="code-block"><span class="at">@media</span> only screen { }
+<span class="comment">/* Mobile-first — always applies */</span>
+
+<span class="at">@media</span> only screen and
+  <span class="prop">(max-width: 40em)</span> { }
+<span class="comment">/* max 640px — mobile only */</span></div>
+    </div>
+    <div class="card">
+      <div class="badge badge-amber">Tablet</div>
+      <div class="card-title">641px – 1024px</div>
+      <div class="code-block"><span class="at">@media</span> only screen and
+  <span class="prop">(min-width: 40.063em)</span> { }
+<span class="comment">/* min 641px — medium+ */</span>
+
+<span class="at">@media</span> only screen and
+  <span class="prop">(min-width: 40.063em)</span> and
+  <span class="prop">(max-width: 64em)</span> { }
+<span class="comment">/* tablet only QA range */</span></div>
+    </div>
+    <div class="card">
+      <div class="badge badge-blue">Desktop</div>
+      <div class="card-title">1025px – 1440px</div>
+      <div class="code-block"><span class="at">@media</span> only screen and
+  <span class="prop">(min-width: 64.063em)</span> { }
+<span class="comment">/* min 1025px — large screens */</span>
+
+<span class="at">@media</span> only screen and
+  <span class="prop">(min-width: 64.063em)</span> and
+  <span class="prop">(max-width: 90em)</span> { }
+<span class="comment">/* desktop QA range */</span></div>
+    </div>
+    <div class="card">
+      <div class="badge badge-teal">XLarge</div>
+      <div class="card-title">1441px – 1920px</div>
+      <div class="code-block"><span class="at">@media</span> only screen and
+  <span class="prop">(min-width: 90.063em)</span> { }
+
+<span class="at">@media</span> only screen and
+  <span class="prop">(min-width: 90.063em)</span> and
+  <span class="prop">(max-width: 120em)</span> { }
+<span class="comment">/* XL QA range */</span></div>
+    </div>
+    <div class="card">
+      <div class="badge badge-purple">XXLarge</div>
+      <div class="card-title">1921px and above</div>
+      <div class="code-block"><span class="at">@media</span> only screen and
+  <span class="prop">(min-width: 120.063em)</span> { }
+<span class="comment">/* min 1921px */</span></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="section-label">Orientation</div>
+  <div class="grid">
+    <div class="card">
+      <div class="badge badge-gray">Portrait</div>
+      <div class="card-title">Height &gt; width</div>
+      <div class="code-block"><span class="at">@media</span> screen and
+  <span class="prop">(orientation: portrait)</span> { }</div>
+      <div class="meta">Applies when the device is held vertically.</div>
+    </div>
+    <div class="card">
+      <div class="badge badge-gray">Landscape</div>
+      <div class="card-title">Width &gt; height</div>
+      <div class="code-block"><span class="at">@media</span> screen and
+  <span class="prop">(orientation: landscape)</span> { }</div>
+      <div class="meta">Applies when the device is held horizontally.</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="section-label">Pixel density (retina)</div>
+  <div class="grid">
+    <div class="card">
+      <div class="badge badge-gray">Standard display</div>
+      <div class="card-title">1× pixel density</div>
+      <div class="code-block"><span class="at">@media</span> screen and
+  <span class="prop">(-webkit-max-device-pixel-ratio: 1)</span> { }</div>
+    </div>
+    <div class="card">
+      <div class="badge badge-teal">Retina / HiDPI</div>
+      <div class="card-title">1.5× and above</div>
+      <div class="code-block"><span class="at">@media</span> only screen and
+  <span class="prop">(-webkit-min-device-pixel-ratio: 1.5)</span>,
+only screen and
+  <span class="prop">(min-device-pixel-ratio: 1.5)</span> { }
+<span class="comment">/* Use 2× assets here */</span></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="section-label">Device-specific (iOS)</div>
+  <div class="grid">
+    <div class="card">
+      <div class="badge badge-pink">iPhone portrait</div>
+      <div class="card-title">max-width 480px + portrait</div>
+      <div class="code-block"><span class="at">@media</span> screen and
+  <span class="prop">(max-device-width: 480px)</span> and
+  <span class="prop">(orientation: portrait)</span> { }</div>
+    </div>
+    <div class="card">
+      <div class="badge badge-pink">iPhone landscape</div>
+      <div class="card-title">max-width 480px + landscape</div>
+      <div class="code-block"><span class="at">@media</span> screen and
+  <span class="prop">(max-device-width: 480px)</span> and
+  <span class="prop">(orientation: landscape)</span> { }</div>
+    </div>
+    <div class="card">
+      <div class="badge badge-purple">iPad portrait</div>
+      <div class="card-title">min-width 481px + portrait</div>
+      <div class="code-block"><span class="at">@media</span> screen and
+  <span class="prop">(min-device-width: 481px)</span> and
+  <span class="prop">(orientation: portrait)</span> { }</div>
+    </div>
+    <div class="card">
+      <div class="badge badge-purple">iPad landscape</div>
+      <div class="card-title">min-width 481px + landscape</div>
+      <div class="code-block"><span class="at">@media</span> screen and
+  <span class="prop">(min-device-width: 481px)</span> and
+  <span class="prop">(orientation: landscape)</span> { }</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="section-label">Viewport meta tag</div>
+  <div class="grid">
+    <div class="card full">
+      <div class="badge badge-gray">Required in &lt;head&gt;</div>
+      <div class="card-title">Prevents mobile browsers from zooming out to fit desktop layout</div>
+      <div class="code-block">&lt;<span class="val">meta</span> <span class="prop">name</span>=<span class="val">"viewport"</span>
+     <span class="prop">content</span>=<span class="val">"width=device-width,
+              initial-scale=1,
+              maximum-scale=1,
+              user-scalable=no"</span> /&gt;</div>
+      <div class="meta">Note: setting user-scalable=no disables pinch-to-zoom — consider accessibility before using it.</div>
+    </div>
+  </div>
 </div>
 
 <div id="toast"></div>
