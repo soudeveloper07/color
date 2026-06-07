@@ -2095,25 +2095,26 @@
 ================================================================ */
       .mob-nav {
         position: fixed;
-        bottom: 20px;
+        bottom: 0px;
         left: 50%;
         transform: translateX(-50%);
-        background: rgba(13, 13, 13, 0.92);
+        background: rgb(0 0 69);
         backdrop-filter: blur(20px);
-        border-radius: 100px;
-        padding: 10px 24px;
+        border-radius: 10px 10px 0px 0px;
+        padding: 18px 24px;
         display: none;
         gap: 26px;
+        width: 100%;
         z-index: 999;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        border: 1px solid rgb(255, 255, 255);
+        box-shadow: 0 10px 40px rgba(173, 0, 0, 0.4);
       }
       .mn-a {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 3px;
-        color: rgba(255, 255, 255, 0.4);
+        color: rgb(255, 255, 255);
         font-size: 17px;
         text-decoration: none;
         transition: color 0.3s;
@@ -2197,8 +2198,13 @@
           grid-template-columns: 1fr;
           gap: 48px;
         }
+        footer {
+          padding-bottom: 80px;
+        }
         .mob-nav {
           display: flex;
+          align-items: center;
+          justify-content: space-between;
         }
         .hero-stats {
           flex-wrap: wrap;
@@ -2206,24 +2212,60 @@
         .edu-wrap {
           grid-template-columns: 1fr;
         }
+        .nav-toggle {
+          display: none;
+        }
       }
       @media (max-width: 640px) {
+        .hero-name {
+          font-size: clamp(39px, 7vw, 90px);
+        }
+        .ct-form {
+          padding: 20px;
+        }
+        .tl-mid,
+        .tl-blank {
+          display: none;
+        }
+        .tl-item {
+          grid-template-columns: 0px 1fr;
+          gap: 0 0px;
+        }
+        .why-card {
+          flex-direction: column;
+          padding: 14px;
+        }
         .projects-grid,
         .svc-grid,
         .why-grid {
           grid-template-columns: 1fr;
         }
         .skills-grid {
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(2, 1fr);
         }
         .section {
-          padding: 80px 0;
+          padding: 50px 0;
         }
         .about-features {
           grid-template-columns: 1fr;
         }
         .form-row {
           grid-template-columns: 1fr;
+        }
+        .container,
+        .container-fluid,
+        .container-lg,
+        .container-md,
+        .container-sm,
+        .container-xl,
+        .container-xxl {
+          --bs-gutter-x: 1.5rem;
+          --bs-gutter-y: 0;
+          width: 100%;
+          padding-right: calc(var(--bs-gutter-x) * 0.5);
+          padding-left: calc(var(--bs-gutter-x) * 0.5);
+          margin-right: auto;
+          margin-left: auto;
         }
       }
     </style>
@@ -2251,6 +2293,11 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#services">Services</a></li>
             <li>
+              <a href="https://soudev.in/modern-&-card.html" target="_blank"
+                >Color UI</a
+              >
+            </li>
+            <li>
               <a href="#contact" class="nav-hire">
                 <i class="fa-solid fa-paper-plane" style="font-size: 12px"></i>
                 Hire Me
@@ -2265,28 +2312,24 @@
     </nav>
 
     <!-- Mobile Nav -->
-    <div class="mob-nav">
-      <a href="#hero" class="mn-a on"
-        ><i class="fa-solid fa-house"></i><span>Home</span></a
-      >
-      <a href="#about" class="mn-a"
-        ><i class="fa-solid fa-user"></i><span>About</span></a
-      >
-      <a href="#skills" class="mn-a"
-        ><i class="fa-solid fa-bolt"></i><span>Skills</span></a
-      >
-      <a href="#projects" class="mn-a"
-        ><i class="fa-solid fa-briefcase"></i><span>Work</span></a
-      >
-      <a href="#contact" class="mn-a"
-        ><i class="fa-solid fa-envelope"></i><span>Contact</span></a
-      >
-      <a
-        href="https://soudev.in/modern-&-card.html"
-        target="_blank"
-        class="mn-a"
-        ><i class="fa-solid fa-palette"></i><span>Color UI</span></a
-      >
+    <div class="container">
+      <div class="mob-nav">
+        <a href="#hero" class="mn-a on"
+          ><i class="fa-solid fa-house"></i><span>Home</span></a
+        >
+        <a href="#about" class="mn-a"
+          ><i class="fa-solid fa-user"></i><span>About</span></a
+        >
+        <a href="#skills" class="mn-a"
+          ><i class="fa-solid fa-bolt"></i><span>Skills</span></a
+        >
+        <a href="#projects" class="mn-a"
+          ><i class="fa-solid fa-briefcase"></i><span>Work</span></a
+        >
+        <a href="#contact" class="mn-a"
+          ><i class="fa-solid fa-envelope"></i><span>Contact</span></a
+        >
+      </div>
     </div>
 
     <!-- ================================================================
