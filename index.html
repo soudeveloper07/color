@@ -3276,52 +3276,34 @@
             <form id="ctForm" autocomplete="off">
               <div class="form-row">
                 <div class="fg">
-                  <input
-                    type="text"
-                    class="finput"
-                    id="fn"
-                    placeholder="Name"
-                    required
-                  />
-                  <label class="flabel" for="fn"
-                    ><i class="fa-solid fa-user"></i> Your Name</label
-                  >
+                  <input type="text" class="finput" id="fn" name="name" placeholder="Name" required />
+                  <label class="flabel" for="fn">
+                    <i class="fa-solid fa-user"></i> Your Name
+                  </label>
                 </div>
+            
                 <div class="fg">
-                  <input
-                    type="email"
-                    class="finput"
-                    id="fe"
-                    placeholder="Email"
-                    required
-                  />
-                  <label class="flabel" for="fe"
-                    ><i class="fa-solid fa-envelope"></i> Email Address</label
-                  >
+                  <input type="email" class="finput" id="fe" name="email" placeholder="Email" required />
+                  <label class="flabel" for="fe">
+                    <i class="fa-solid fa-envelope"></i> Email Address
+                  </label>
                 </div>
               </div>
+            
               <div class="fg">
-                <input
-                  type="text"
-                  class="finput"
-                  id="fs"
-                  placeholder="Subject"
-                />
-                <label class="flabel" for="fs"
-                  ><i class="fa-solid fa-tag"></i> Subject</label
-                >
+                <input type="text" class="finput" id="fs" name="subject" placeholder="Subject" />
+                <label class="flabel" for="fs">
+                  <i class="fa-solid fa-tag"></i> Subject
+                </label>
               </div>
+            
               <div class="fg">
-                <textarea
-                  class="ftextarea"
-                  id="fm"
-                  placeholder="Message"
-                  required
-                ></textarea>
-                <label class="flabel" for="fm"
-                  ><i class="fa-solid fa-message"></i> Your Message</label
-                >
+                <textarea class="ftextarea" id="fm" name="message" placeholder="Message" required></textarea>
+                <label class="flabel" for="fm">
+                  <i class="fa-solid fa-message"></i> Your Message
+                </label>
               </div>
+            
               <button type="submit" class="f-submit">
                 <i class="fa-solid fa-paper-plane"></i> Send Message
               </button>
@@ -3408,7 +3390,50 @@
     <!-- ================================================================
      SCRIPTS
 ================================================================ -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+  emailjs.init({
+    publicKey: "XwtEK56S-qhUDmPz4"
+  });
+
+  const form = document.getElementById("ctForm");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const btn = form.querySelector(".f-submit");
+    btn.disabled = true;
+    btn.innerHTML = "Sending...";
+
+    emailjs.sendForm(
+      "service_0d3hnjr",
+      "template_re98en6",
+      form
+    )
+      .then(function () {
+
+        document.getElementById("fSuccess").style.display = "block";
+        form.reset();
+
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+
+      })
+      .catch(function (error) {
+
+        console.error(error);
+
+        alert("Failed to send email.\n" + JSON.stringify(error));
+
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+
+      });
+  });
+</script>
     <script>
+      
       /* ----------------------------------------------------------------
    THREE.JS PARTICLES
 ---------------------------------------------------------------- */
