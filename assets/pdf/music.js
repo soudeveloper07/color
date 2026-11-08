@@ -1,6 +1,6 @@
 /* soudev.in background music: self-contained (button + CSS + fade-in logic) */
 (() => {
-  const SRC = "assets/audio/ambient.mp3", TARGET = 0.35, FADE_MS = 3000;
+  const SRC = "assets/pdf/ambient.mp3", TARGET = 0.35, FADE_MS = 3000;
 
   const css = document.createElement("style");
   css.textContent = `
